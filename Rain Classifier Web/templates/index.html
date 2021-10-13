@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Final Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Rain Prediction</h1>
+  <p>Created by</p>
+  <p>I Made Satria Bimantara</p>
+  <p>Naufal Rezky Ananda</p>
+
+    <form action="{{ url_for('predict')}}"method="post">
+      <select name="Kota" class="form-control">
+        <option>Kota</option>
+        <option>Albury</option>
+        <option>BadgerysCreek</option>
+        <option>Cobar</option>
+        <option>CoffsHarbour</option>
+        <option>Moree</option>
+        <option>Newcastle</option>
+        <option>NorahHead</option>
+        <option>NorfolkIsland</option>
+        <option>Penrith</option>
+        <option>Richmond</option>
+        <option>Sydney</option>
+        <option>SydneyAirport</option>
+        <option>WaggaWagga</option>
+        <option>Williamtown</option>
+        <option>Wollongong</option>
+        <option>Canberra</option>
+        <option>Tuggeranong</option>
+        <option>MountGinini</option>
+        <option>Ballarat</option>
+        <option>Bendigo</option>
+        <option>Sale</option>
+        <option>MelbourneAirport</option>
+        <option>Melbourne</option>
+        <option>Mildura</option>
+        <option>Nhil</option>
+        <option>Portland</option>
+        <option>Watsonia</option>
+        <option>Dartmoor</option>
+        <option>Brisbane</option>
+        <option>Cairns</option>
+        <option>GoldCoast</option>
+        <option>Townsville</option>
+        <option>Adelaide</option>
+        <option>MountGambier</option>
+        <option>Nuriootpa</option>
+        <option>Woomera</option>
+        <option>Albany</option>
+        <option>Witchcliffe</option>
+        <option>PearceRAAF</option>
+        <option>PerthAirport</option>
+        <option>Perth</option>
+        <option>SalmonGums</option>
+        <option>Walpole</option>
+        <option>Hobart</option>
+        <option>Launceston</option>
+        <option>AliceSprings</option>
+        <option>Darwin</option>
+        <option>Katherine</option>
+        <option>Uluru</option>
+      </select>
+      <input type="text" name="Suhu Minimum" placeholder="Suhu Minimum" required="required" />
+      <input type="text" name="Suhu Maximum" placeholder="Suhu Maximum" required="required" />
+      <input type="text" name="Curah Hujan" placeholder="Curah Hujan" required="required">
+      <input type="text" name="Penguapan" placeholder="Penguapan" required="required">
+      <input type="text" name="Jam Cerah" placeholder="Jam Cerah" required="required">
+      <select name="Arah Angin 24 jam" class="form-control">
+        <option>Arah Angin 24 jam</option>
+        <option>W</option>
+        <option>WNW</option>
+        <option>WSW</option>
+        <option>NE</option>
+        <option>NNW</option>
+        <option>N</option>
+        <option>NNE</option>
+        <option>SW</option>
+        <option>ENE</option>
+        <option>SSE</option>
+        <option>S</option>
+        <option>NW</option>
+        <option>SE</option>
+        <option>ESE</option>
+        <option>E</option>
+        <option>NW</option>
+        <option>WNW</option>
+        <option>NNE</option>
+        <option>nan</option>
+      </select>
+      <input type="text" name="Kecepatan Angin 24 jam" placeholder="Kecepatan Angin 24 jam" required="required">
+      <select name="Arah Angin 9 Pagi" class="form-control">
+        <option>Arah Angin 9 Pagi</option>
+        <option>W</option>
+        <option>WNW</option>
+        <option>WSW</option>
+        <option>NE</option>
+        <option>NNW</option>
+        <option>N</option>
+        <option>NNE</option>
+        <option>SW</option>
+        <option>ENE</option>
+        <option>SSE</option>
+        <option>S</option>
+        <option>NW</option>
+        <option>SE</option>
+        <option>ESE</option>
+        <option>E</option>
+        <option>NW</option>
+        <option>WNW</option>
+        <option>NNE</option>
+        <option>nan</option>
+      </select>
+      <select name="Arah Angin 3 Sore" class="form-control">
+        <option>Arah Angin 3 Sore</option>
+        <option>W</option>
+        <option>WNW</option>
+        <option>WSW</option>
+        <option>NE</option>
+        <option>NNW</option>
+        <option>N</option>
+        <option>NNE</option>
+        <option>SW</option>
+        <option>ENE</option>
+        <option>SSE</option>
+        <option>S</option>
+        <option>NW</option>
+        <option>SE</option>
+        <option>ESE</option>
+        <option>E</option>
+        <option>NW</option>
+        <option>WNW</option>
+        <option>NNE</option>
+        <option>nan</option>
+      </select>
+      <input type="text" name="Kecepatan Angin 9 Pagi" placeholder="Kecepatan Angin 9 Pagi" required="required">
+      <input type="text" name="Kecepatan Angin 3 Sore" placeholder="Kecepatan Angin 3 Sore" required="required">
+      <input type="text" name="Kelembaban 9 Pagi" placeholder="Kelembaban 9 Pagi" required="required">
+      <input type="text" name="Kelembaban 3 Sore" placeholder="Kelembaban 3 Sore" required="required">
+      <input type="text" name="Tekanan Udara 9 Pagi" placeholder="Tekanan Udara 9 Pagi" required="required">
+      <input type="text" name="Tekanan Udara 3 Sore" placeholder="Tekanan Udara 3 Sore" required="required">
+      <input type="text" name="Awan 9 Pagi" placeholder="Awan 9 Pagi" required="required">
+      <input type="text" name="Awan 3 Sore" placeholder="Awan 3 Sore" required="required">
+      <input type="text" name="Suhu Celcius 3 Sore" placeholder="Suhu Celcius 3 Sore" required="required">
+      <select name="Hari ini Hujan" class="form-control">
+        <option>Hari ini Hujan?</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>nan</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+    
+    
+ </div>
+
+
+</body>
+</html>
